@@ -11,9 +11,21 @@ config_version=5
 [application]
 
 config/name="FelpoJam"
+run/main_scene="uid://dqyxavmryfh4n"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=2
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
 project/assembly_name="FelpoJam"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
