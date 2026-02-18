@@ -12,12 +12,13 @@ func add_money(amount: int) -> void:
 	current_money += amount
 	money_changed.emit(current_money)
 	
-func subtract_money(amount: int) -> void:
+func subtract_money(amount: int) -> bool:
 	if amount > current_money:
 		not_enoght_money.emit()
-		return
+		return false
 	current_money -= amount
 	money_changed.emit(current_money)
+	return true
 	
 func set_money(amount: int) -> void:
 	if amount < 0:
