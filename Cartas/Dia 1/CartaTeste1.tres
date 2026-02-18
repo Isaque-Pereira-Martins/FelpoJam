@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" load_steps=2 format=3 uid="uid://dew3gdv3q1uu1"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_inm8w"]
+
+[resource]
+script = ExtResource("1_inm8w")
+custo = 2
+ataque = 8
+vida = 16
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"
