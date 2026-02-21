@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://wq4y5asasmuc"]
+
+[ext_resource type="Texture2D" uid="uid://c4h0w4prat27n" path="res://Sprites/CartaPH.png" id="1_2qo34"]
+
+[node name="Coin" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(1.0430813e-07, -1.1920929e-07)
+scale = Vector2(0.32467732, 0.23368573)
+texture = ExtResource("1_2qo34")

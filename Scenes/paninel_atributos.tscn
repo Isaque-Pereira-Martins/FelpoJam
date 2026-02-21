@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc6xvhrslapq0"]
+
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="1_dyoig"]
+[ext_resource type="Script" uid="uid://lciotdx6qsdw" path="res://Scripts/painel_atributos.gd" id="1_l2qle"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qeyqd"]
+font = ExtResource("1_dyoig")
+font_size = 17
+
+[sub_resource type="LabelSettings" id="LabelSettings_upb72"]
+font = ExtResource("1_dyoig")
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_rssjf"]
+font = ExtResource("1_dyoig")
+font_size = 17
+
+[sub_resource type="LabelSettings" id="LabelSettings_heh15"]
+font = ExtResource("1_dyoig")
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7mbx"]
+font = ExtResource("1_dyoig")
+font_size = 13
+
+[node name="PaninelAtributos" type="Node2D" node_paths=PackedStringArray("classe", "emocao", "texto")]
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_l2qle")
+classe = NodePath("PanelContainer/VBoxContainer/Classe/TipoClasse")
+emocao = NodePath("PanelContainer/VBoxContainer/Emocao/TipoEmocao")
+texto = NodePath("PanelContainer/VBoxContainer/PanelContainer/Texto")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -69.5
+offset_right = 79.5
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Classe" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NomeClasse" type="Label" parent="PanelContainer/VBoxContainer/Classe"]
+layout_mode = 2
+text = "Classe:"
+label_settings = SubResource("LabelSettings_qeyqd")
+
+[node name="TipoClasse" type="Label" parent="PanelContainer/VBoxContainer/Classe"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Guerreiro"
+label_settings = SubResource("LabelSettings_upb72")
+horizontal_alignment = 2
+
+[node name="Emocao" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NomeEmocao" type="Label" parent="PanelContainer/VBoxContainer/Emocao"]
+layout_mode = 2
+text = "Emoção:"
+label_settings = SubResource("LabelSettings_rssjf")
+
+[node name="TipoEmocao" type="Label" parent="PanelContainer/VBoxContainer/Emocao"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Raiva"
+label_settings = SubResource("LabelSettings_heh15")
+horizontal_alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Texto" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(159, 85)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Algum textinho só pra eu textar como que tá ficando essa bagaça toda"
+label_settings = SubResource("LabelSettings_k7mbx")
+autowrap_mode = 2

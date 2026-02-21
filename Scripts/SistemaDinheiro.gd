@@ -1,7 +1,7 @@
 class_name SistemaDinheiro extends Node
 
 #Variaveis
-var current_money := 10
+@export var current_money := 10
 
 #Sinais
 signal money_changed(current)

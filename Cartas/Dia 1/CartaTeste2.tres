@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AtributosCarta" load_steps=2 format=3 uid="uid://cpgkd8tjvwek7"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_fa02h"]
+
+[resource]
+script = ExtResource("1_fa02h")
+texto = "Texto2. Espero conseguir terminar essa jam a tempo. Tem muito trabalho pela frente"
+custo = 5
+ataque = 8
+vida = 16
+classe = "Mago"
+emocao = "Feliz"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"
