@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_inm8w")
+texto = "Texto1. Como eu gosto de comer macarrão com salsicha. Bom de mais"
 custo = 2
-ataque = 8
 vida = 16
+classe = "Guerreiro"
+emocao = "Carinho"
 metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

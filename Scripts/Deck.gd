@@ -1,17 +1,24 @@
 class_name Deck extends Node2D
 
 @export var hand : Hand
+@export var Atributos :Array[AtributosCarta]
 var cards : Array[Carta] = []
 var cartaPL = preload("res://Scenes/carta.tscn")
+var player : Player = null
+var enemie : Player = null
 
 func _ready() -> void:
-	for i in range(6):
+	for atributo : AtributosCarta in Atributos:
 		var cartaInstance : Carta = cartaPL.instantiate()
 		cartaInstance.button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		cartaInstance.player = player
+		cartaInstance.enemie = enemie
+		cartaInstance.atributos = atributo
 		cards.append(cartaInstance)
 		add_child(cartaInstance)
 
 func drag() -> void:
+	Globals.Select_card(null)
 	if cards.size() == 0:
 		return
 	cards[-1].button.mouse_filter = Control.MOUSE_FILTER_STOP

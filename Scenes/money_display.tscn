@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyfsi4t48qwc1"]
+
+[ext_resource type="Script" uid="uid://bf0arcl7urckr" path="res://Scripts/MoneyDisplay.gd" id="1_rs5mv"]
+
+[node name="MoneyDisplay" type="Node2D"]
+script = ExtResource("1_rs5mv")
