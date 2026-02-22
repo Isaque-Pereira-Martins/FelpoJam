@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://h2rewqv7x0g"]
+
+[ext_resource type="Script" uid="uid://cjqhclh6ccbu0" path="res://Scripts/main_menu.gd" id="1_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://vqg4ajvwsws8" path="res://PlaceHolders/Botões/StartButton.png" id="1_opfnp"]
+[ext_resource type="Texture2D" uid="uid://ct2b4cep75y6f" path="res://PlaceHolders/Botões/StartButtonHover.png" id="2_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://dqno61ikmerqr" path="res://PlaceHolders/Botões/OptionsButton.png" id="3_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://b6qn0on14u4j7" path="res://PlaceHolders/Botões/OptionsButtonHover.png" id="4_trj04"]
+[ext_resource type="Texture2D" uid="uid://brtu21ttp331f" path="res://PlaceHolders/Botões/SairButton.png" id="5_16hvj"]
+[ext_resource type="Texture2D" uid="uid://donsth7cj8hm8" path="res://PlaceHolders/Botões/SairButtonHover.png" id="6_vr1f0"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cp0ys")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 100.0
+text = "titulo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Start" type="TextureButton" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+texture_normal = ExtResource("1_opfnp")
+texture_hover = ExtResource("2_cp0ys")
+
+[node name="Options" type="TextureButton" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+texture_normal = ExtResource("3_yhxw7")
+texture_hover = ExtResource("4_trj04")
+
+[node name="Sair" type="TextureButton" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+texture_normal = ExtResource("5_16hvj")
+texture_hover = ExtResource("6_vr1f0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(1, 0.183692, 0.549878, 1)
+
+[connection signal="pressed" from="CenterContainer/MainButtons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Sair" to="." method="_on_sair_pressed"]

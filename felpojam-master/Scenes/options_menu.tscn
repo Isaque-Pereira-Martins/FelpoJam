@@ -1,0 +1,117 @@
+[gd_scene load_steps=5 format=3 uid="uid://ih1p6x6ovno7"]
+
+[ext_resource type="Script" uid="uid://bf1h6ei2pye80" path="res://Scripts/options_menu.gd" id="1_l1wg4"]
+[ext_resource type="Texture2D" uid="uid://brtu21ttp331f" path="res://PlaceHolders/Botões/SairButton.png" id="1_uj0ok"]
+[ext_resource type="Texture2D" uid="uid://donsth7cj8hm8" path="res://PlaceHolders/Botões/SairButtonHover.png" id="2_l1wg4"]
+[ext_resource type="PackedScene" uid="uid://cbyfdxkemvyym" path="res://Scenes/volume_slider.tscn" id="2_m6e8v"]
+
+[node name="options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l1wg4")
+
+[node name="VolumeButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -65.5
+offset_bottom = 65.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="MasterSlider" parent="VolumeButtons" instance=ExtResource("2_m6e8v")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MasterLabel" type="Label" parent="VolumeButtons/MasterSlider"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 108.0
+offset_bottom = 3.0
+text = "Geral"
+horizontal_alignment = 1
+
+[node name="MusicaSlider" parent="VolumeButtons" instance=ExtResource("2_m6e8v")]
+layout_mode = 2
+bus_name = "Musica"
+
+[node name="MusicaLabel" type="Label" parent="VolumeButtons/MusicaSlider"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 108.0
+offset_bottom = 3.0
+text = "Musica"
+horizontal_alignment = 1
+
+[node name="EfeitosSlider" parent="VolumeButtons" instance=ExtResource("2_m6e8v")]
+layout_mode = 2
+bus_name = "Efeitos"
+
+[node name="EfeitosLabel" type="Label" parent="VolumeButtons/EfeitosSlider"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 108.0
+offset_bottom = 3.0
+text = "Efeitos"
+horizontal_alignment = 1
+
+[node name="Voltar" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -35.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("1_uj0ok")
+texture_hover = ExtResource("2_l1wg4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(1, 0.183692, 0.549878, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 145.0
+offset_bottom = 8.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Tela"
+
+[node name="ScreenButton" type="OptionButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Janela"
+popup/item_0/id = 0
+popup/item_1/text = "Maximizado"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="item_selected" from="HBoxContainer/ScreenButton" to="." method="_on_screen_button_item_selected"]
