@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5h6n5rvsmmql"]
+
+[ext_resource type="Texture2D" uid="uid://dy5qoe2s2floe" path="res://Sprites/molduraPlayer.png" id="1_cuyhk"]
+[ext_resource type="Texture2D" uid="uid://du8xtpjr1cpc8" path="res://Sprites/player.png" id="2_kbur4"]
+[ext_resource type="PackedScene" uid="uid://bc4ra1nnrsccd" path="res://Scenes/heart.tscn" id="3_cuyhk"]
+
+[node name="Portrait" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_cuyhk")
+
+[node name="Picture" type="Sprite2D" parent="."]
+texture = ExtResource("2_kbur4")
+
+[node name="Heart" parent="." instance=ExtResource("3_cuyhk")]
+position = Vector2(-33, -32)

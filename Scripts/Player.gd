@@ -7,6 +7,7 @@ class_name Player extends Node
 #@export var sistemaVida : SistemaVida
 @export var moneyLabel : Label = null
 @export var enemie : Player = null
+var jogando : bool = false
 
 func _ready() -> void:
 	deck.player = self

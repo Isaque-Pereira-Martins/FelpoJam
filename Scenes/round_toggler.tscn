@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://ckx17c32k3rtf"]
+
+[ext_resource type="Script" uid="uid://ch82e3vnyr1jb" path="res://Scripts/Toggler.gd" id="1_8xbrq"]
+[ext_resource type="Shader" uid="uid://dejigrqlwitio" path="res://Shaders/round_toggler.gdshader" id="1_pk5tu"]
+[ext_resource type="Texture2D" uid="uid://d0m3lsrjy3e6i" path="res://Sprites/TogglerPH.png" id="2_8xbrq"]
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="2_pk5tu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lyoqo"]
+seed = 2
+frequency = 0.0342
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e28kv"]
+width = 80
+height = 25
+noise = SubResource("FastNoiseLite_lyoqo")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcvse"]
+shader = ExtResource("1_pk5tu")
+shader_parameter/noise = SubResource("NoiseTexture2D_e28kv")
+shader_parameter/have_effect = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8xbrq"]
+font = ExtResource("2_pk5tu")
+font_size = 10
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8xbrq"]
+seed = 2
+frequency = 0.0342
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lyoqo"]
+width = 80
+height = 25
+noise = SubResource("FastNoiseLite_8xbrq")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e28kv"]
+shader = ExtResource("1_pk5tu")
+shader_parameter/noise = SubResource("NoiseTexture2D_lyoqo")
+shader_parameter/have_effect = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_lcvse"]
+font = ExtResource("2_pk5tu")
+font_size = 10
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="RoundToggler" type="Node2D" node_paths=PackedStringArray("jogador", "inimigo")]
+script = ExtResource("1_8xbrq")
+jogador = NodePath("SeuTurno")
+inimigo = NodePath("TurnoInimigo")
+
+[node name="SeuTurno" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_lcvse")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -12.5
+offset_right = 40.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 12.5)
+texture = ExtResource("2_8xbrq")
+
+[node name="Label" type="Label" parent="SeuTurno"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 25.0
+text = "Seu turno"
+label_settings = SubResource("LabelSettings_8xbrq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnoInimigo" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_e28kv")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 21.5
+offset_right = 40.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 12.5)
+texture = ExtResource("2_8xbrq")
+
+[node name="Label" type="Label" parent="TurnoInimigo"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 25.5
+text = "Turno Inimigo"
+label_settings = SubResource("LabelSettings_lcvse")
+horizontal_alignment = 1
+vertical_alignment = 1

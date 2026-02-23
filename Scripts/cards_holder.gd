@@ -43,7 +43,7 @@ func link_card(card: Carta) -> void:
 	linked = true
 
 func set_card_request(card: Carta) -> void:
-	if card.player != player:
+	if card.player != player or not player.jogando:
 		Globals.Select_card(null)
 		return
 	if not player.can_place_card(card):

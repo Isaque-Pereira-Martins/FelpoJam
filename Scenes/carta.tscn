@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcs8ercy6e7cv"]
+[gd_scene load_steps=6 format=3 uid="uid://dcs8ercy6e7cv"]
 
 [ext_resource type="Script" uid="uid://mwf6h075mr02" path="res://Scripts/carta.gd" id="1_yasdf"]
 [ext_resource type="Texture2D" uid="uid://c4h0w4prat27n" path="res://Sprites/CartaPH.png" id="2_5v8d1"]
 [ext_resource type="Resource" uid="uid://dew3gdv3q1uu1" path="res://Cartas/Dia 1/CartaTeste1.tres" id="2_mk6xv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk6xv"]
+
+[sub_resource type="Theme" id="Theme_om27y"]
+Button/styles/normal = SubResource("StyleBoxEmpty_mk6xv")
 
 [node name="Carta" type="Node2D" node_paths=PackedStringArray("button")]
 z_index = 1
@@ -26,5 +31,6 @@ offset_left = -25.0
 offset_top = -41.0
 offset_right = 25.0
 offset_bottom = 41.0
+theme = SubResource("Theme_om27y")
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

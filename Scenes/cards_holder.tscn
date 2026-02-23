@@ -12,17 +12,18 @@ button = NodePath("Button")
 [node name="Position" type="Marker2D" parent="."]
 
 [node name="Shadow" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(0.13725491, 0.88235295, 0.13725491, 1)
 texture = ExtResource("1_knenr")
 
 [node name="Button" type="Button" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 offset_left = -25.0
 offset_top = -41.0
 offset_right = 25.0
 offset_bottom = 41.0
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -24.0
 offset_top = -11.0
 offset_right = 29.0

@@ -17,12 +17,13 @@ func _ready() -> void:
 		cards.append(cartaInstance)
 		add_child(cartaInstance)
 
-func drag() -> void:
+func drag(quant: int) -> void:
 	Globals.Select_card(null)
-	if cards.size() == 0:
-		return
-	cards[-1].button.mouse_filter = Control.MOUSE_FILTER_STOP
-	hand.new_card(cards.pop_at(-1))
+	if quant > cards.size():
+		quant = cards.size()
+	for i in range(quant):
+		cards[-1].button.mouse_filter = Control.MOUSE_FILTER_STOP
+		hand.new_card(cards.pop_at(-1))
 
 func _on_button_button_up() -> void:
-	drag()
+	pass
