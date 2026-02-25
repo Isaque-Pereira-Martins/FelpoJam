@@ -1,27 +1,40 @@
 class_name Carta extends Node2D
 
+#region variaveis
 @export var atributos : AtributosCarta
+@export var life : SistemaVida
 @export var button : Button
+@export var carimbo_sprite : Sprite2D
+@export var ataque_texto : Label
+@export var vida_texto : Label
 @export_enum("InHand", "InLine") var state
 var walking: bool = false#serve para não dar problema caso o player clique em dois holders rapidamente.
 var actual_holder : Holder = null
 var holder_scale : Vector2 = Vector2(1,1)
 var player : Player = null
 var enemie : Player = null
+var carimbo : Carimbo = null
+#endregion
 
+#region sinais
 signal go_finished
 signal atack_finished
+#endregion
 
+#region funções
 func _ready() -> void:
 	Globals.Selected_card_changed.connect(selected_changed)
+	life.health_changed.connect(life_changed)
+	life.died.connect(died)
+	life.max_health = atributos.vida
+	life.set_life(atributos.vida)
 
 func go_to_holder(holder: Holder) -> void:
 	var holder_marker = holder.marker
-	holder.link_card(self)
 	actual_holder = holder
+	actual_holder.actual_card  = self
 	holder_scale = actual_holder.marker.global_scale
 	go_to(holder_marker.global_position, holder_marker.global_rotation,holder_marker.global_scale)
-	go_finished.emit()
 	
 	#Atualizar estado de acordo com o holder que ele vai
 	
@@ -60,6 +73,13 @@ func selected_changed(card) -> void:
 	var tween = create_tween()
 	tween.tween_property(self,"scale", holder_scale,0.2).set_trans(Tween.TRANS_QUAD)
 
+func update_atributos() -> void:
+	vida_texto.text = str(life.current_health)
+	ataque_texto.text = str(atributos.ataque)
+
+func life_changed(_max_life: int, _current: int) -> void:
+	update_atributos()
+
 func neg_request() -> void: #animação chamada quando o jogador não consegue colocar a carta
 	Globals.Select_card(null)
 	if walking:
@@ -75,10 +95,42 @@ func neg_request() -> void: #animação chamada quando o jogador não consegue c
 
 func atack() -> void:
 	z_index = 2
-	var holder_target : Holder = enemie.line.holders[enemie.line.size_cards-1-player.line.cards.find(self)]
+	var index_target: int = enemie.line.size_cards-1-player.line.cards.find(self)
+	var holder_target : Holder = enemie.line.holders[index_target]
+	var card_target : Carta = enemie.line.cards[index_target]
 	go_to(holder_target.marker.global_position + Vector2.UP.rotated(holder_target.global_rotation)*30)
 	await self.go_finished
+	if card_target == null:
+		enemie.sistemaVida.take_damage(atributos.ataque)
+	else:
+		card_target.hit(atributos.ataque)
 	go_to_holder(actual_holder)
 	await self.go_finished
 	z_index = 1
 	atack_finished.emit()
+
+func hit(amount: int) -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color.ORANGE_RED,0.2).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(self, "modulate", Color.WHITE,0.2).set_trans(Tween.TRANS_QUAD)
+	life.take_damage(amount)
+
+func died() -> void:
+	enemie.sistemaDinheiro.add_money(1)
+	actual_holder.unlink()
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.2,1.2),0.3).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(self, "scale", Vector2.ZERO,0.5).set_trans(Tween.TRANS_QUAD)
+	await tween.finished
+	queue_free()
+
+func set_carimbo(d_carimbo: Carimbo) -> void:
+	if carimbo != null:
+		return
+	carimbo = d_carimbo
+	carimbo.atributo.auto(self)
+	carimbo_sprite.texture = d_carimbo.sprite.texture
+	carimbo_sprite.modulate = Color.YELLOW
+	var tween = create_tween()
+	tween.tween_property(carimbo_sprite,"modulate",Color.WHITE,0.5).set_trans(Tween.TRANS_QUAD)
+#endregion

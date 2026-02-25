@@ -23,16 +23,19 @@ func _on_button_button_up() -> void:
 func card_leaves() -> void:
 	if actual_card.actual_holder == self:
 		return
-	actual_card.go_finished.disconnect(card_leaves)
-	linked = false
-	actual_card = null
-	button.mouse_filter = Control.MOUSE_FILTER_STOP
+	unlink()
 	card_out.emit(self)
 
 func update_card() -> void:
 	if actual_card == null:
 		return
 	actual_card.go_to_holder(self)
+
+func unlink() -> void:
+	actual_card.go_finished.disconnect(card_leaves)
+	linked = false
+	actual_card = null
+	button.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 func link_card(card: Carta) -> void:
 	button.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -49,6 +52,7 @@ func set_card_request(card: Carta) -> void:
 	if not player.can_place_card(card):
 		card.neg_request()
 		return
+	link_card(card)
 	card.go_to_holder(self)
 	Globals.Select_card(null)
 	player.sistemaDinheiro.subtract_money(card.atributos.custo)

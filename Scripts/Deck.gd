@@ -1,12 +1,15 @@
 class_name Deck extends Node2D
 
+#region variaveis
 @export var hand : Hand
 @export var Atributos :Array[AtributosCarta]
 var cards : Array[Carta] = []
 var cartaPL = preload("res://Scenes/carta.tscn")
 var player : Player = null
 var enemie : Player = null
+#endregion
 
+#region funções
 func _ready() -> void:
 	for atributo : AtributosCarta in Atributos:
 		var cartaInstance : Carta = cartaPL.instantiate()
@@ -27,3 +30,5 @@ func drag(quant: int) -> void:
 
 func _on_button_button_up() -> void:
 	pass
+
+#endregion

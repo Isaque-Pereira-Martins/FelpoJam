@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://fcxw63bw5fl6"]
+
+[ext_resource type="Script" uid="uid://wg8k3u7pt660" path="res://Scripts/volume_slider.gd" id="1_0rqdt"]
+
+[node name="VolumeSlider" type="Control" unique_id=498645191 node_paths=PackedStringArray("slider")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0rqdt")
+slider = NodePath("VolumeSlider")
+
+[node name="VolumeSlider" type="HSlider" parent="." unique_id=587783918]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 16.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[connection signal="value_changed" from="VolumeSlider" to="VolumeSlider" method="_on_value_changed"]

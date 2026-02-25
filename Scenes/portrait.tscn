@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5h6n5rvsmmql"]
+[gd_scene format=3 uid="uid://b5h6n5rvsmmql"]
 
 [ext_resource type="Texture2D" uid="uid://dy5qoe2s2floe" path="res://Sprites/molduraPlayer.png" id="1_cuyhk"]
+[ext_resource type="Script" uid="uid://1l2yytqs12ye" path="res://Scripts/portrait.gd" id="1_kbur4"]
 [ext_resource type="Texture2D" uid="uid://du8xtpjr1cpc8" path="res://Sprites/player.png" id="2_kbur4"]
 [ext_resource type="PackedScene" uid="uid://bc4ra1nnrsccd" path="res://Scenes/heart.tscn" id="3_cuyhk"]
 
-[node name="Portrait" type="Node2D"]
+[node name="Portrait" type="Node2D" unique_id=1512275915 node_paths=PackedStringArray("background", "picture", "heart")]
+script = ExtResource("1_kbur4")
+background = NodePath("Background")
+picture = NodePath("Picture")
+heart = NodePath("Heart")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1524371805]
 texture = ExtResource("1_cuyhk")
 
-[node name="Picture" type="Sprite2D" parent="."]
+[node name="Picture" type="Sprite2D" parent="." unique_id=988293874]
 texture = ExtResource("2_kbur4")
 
-[node name="Heart" parent="." instance=ExtResource("3_cuyhk")]
+[node name="Heart" parent="." unique_id=1117175715 instance=ExtResource("3_cuyhk")]
 position = Vector2(-33, -32)

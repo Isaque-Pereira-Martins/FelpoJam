@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc4ra1nnrsccd"]
+[gd_scene format=3 uid="uid://bc4ra1nnrsccd"]
 
 [ext_resource type="Script" uid="uid://cr8vm305ed7xe" path="res://Scripts/heart.gd" id="1_4obt7"]
 [ext_resource type="Texture2D" uid="uid://bqq6mh7p4lg0w" path="res://Sprites/vida0.png" id="2_atbr1"]
@@ -14,15 +14,16 @@ font_size = 15
 outline_size = 4
 outline_color = Color(0.27058825, 0.16078432, 0.24705882, 1)
 
-[node name="Heart" type="Node2D" node_paths=PackedStringArray("life_text")]
+[node name="Heart" type="Node2D" unique_id=1332212175 node_paths=PackedStringArray("sprite", "life_text")]
 script = ExtResource("1_4obt7")
+sprite = NodePath("Sprite2D")
 texture = Array[CompressedTexture2D]([ExtResource("2_atbr1"), ExtResource("3_rhnby"), ExtResource("4_gdh3h"), ExtResource("5_hyv53"), ExtResource("6_3aedr")])
 life_text = NodePath("LifeText")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1461863055]
 texture = ExtResource("6_3aedr")
 
-[node name="LifeText" type="Label" parent="."]
+[node name="LifeText" type="Label" parent="." unique_id=84271632]
 offset_left = -10.0
 offset_top = -11.0
 offset_right = 12.0

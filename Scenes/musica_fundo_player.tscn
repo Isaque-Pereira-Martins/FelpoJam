@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b3w3gfb7ujhtb"]
+
+[ext_resource type="AudioStream" uid="uid://lkowhlw5fbmn" path="res://Sons/lofi.mp3" id="1_bebwq"]
+[ext_resource type="Script" uid="uid://3q7fvcnx0h5c" path="res://Scripts/musica_fundo_player.gd" id="1_mnnrn"]
+
+[node name="musica_fundo_player" type="AudioStreamPlayer" unique_id=670138215]
+stream = ExtResource("1_bebwq")
+autoplay = true
+script = ExtResource("1_mnnrn")

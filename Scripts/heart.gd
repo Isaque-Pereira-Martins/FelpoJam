@@ -12,6 +12,6 @@ func set_life(life: int) -> void:
 		life_text.text = ""
 		return
 	@warning_ignore("integer_division")
-	var texture_index = int(life/max_life)*4
+	var texture_index = int(float(life)/max_life*4) + 1
 	sprite.texture = texture[texture_index]
 	life_text.text = str(life)

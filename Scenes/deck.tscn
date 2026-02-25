@@ -1,24 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv28q0dr24qtj"]
+[gd_scene format=3 uid="uid://bv28q0dr24qtj"]
 
 [ext_resource type="Script" uid="uid://bjfnba5q0766e" path="res://Scripts/Deck.gd" id="1_io7pv"]
 [ext_resource type="Texture2D" uid="uid://c4h0w4prat27n" path="res://Sprites/CartaPH.png" id="1_ukesx"]
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="2_nlncs"]
 
-[node name="Deck" type="Node2D"]
+[node name="Deck" type="Node2D" unique_id=422215781]
 script = ExtResource("1_io7pv")
+Atributos = Array[ExtResource("2_nlncs")]([null])
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=154892435]
 self_modulate = Color(1, 0.043137256, 0, 1)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_ukesx")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1810646689]
 offset_left = -24.000002
 offset_top = -17.000002
 offset_right = 15.999998
 offset_bottom = 5.999998
 text = "Deck"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=2122073032]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -32.0
 offset_top = -53.0

@@ -1,36 +1,76 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcs8ercy6e7cv"]
+[gd_scene format=3 uid="uid://dcs8ercy6e7cv"]
 
 [ext_resource type="Script" uid="uid://mwf6h075mr02" path="res://Scripts/carta.gd" id="1_yasdf"]
 [ext_resource type="Texture2D" uid="uid://c4h0w4prat27n" path="res://Sprites/CartaPH.png" id="2_5v8d1"]
 [ext_resource type="Resource" uid="uid://dew3gdv3q1uu1" path="res://Cartas/Dia 1/CartaTeste1.tres" id="2_mk6xv"]
+[ext_resource type="Script" uid="uid://dm83c2r27p37u" path="res://Scripts/SistemaVida.gd" id="4_om27y"]
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="5_stux1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk6xv"]
 
 [sub_resource type="Theme" id="Theme_om27y"]
 Button/styles/normal = SubResource("StyleBoxEmpty_mk6xv")
 
-[node name="Carta" type="Node2D" node_paths=PackedStringArray("button")]
+[sub_resource type="LabelSettings" id="LabelSettings_pmvtw"]
+font = ExtResource("5_stux1")
+font_color = Color(1, 0.050980393, 0.011764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vc0oh"]
+font = ExtResource("5_stux1")
+font_color = Color(0.03137255, 1, 0.13725491, 1)
+
+[node name="Carta" type="Node2D" unique_id=520873300 node_paths=PackedStringArray("life", "button", "carimbo_sprite", "ataque_texto", "vida_texto")]
 z_index = 1
 script = ExtResource("1_yasdf")
 atributos = ExtResource("2_mk6xv")
+life = NodePath("SistemaVida")
 button = NodePath("Button")
+carimbo_sprite = NodePath("CarimboSprite")
+ataque_texto = NodePath("Ataque")
+vida_texto = NodePath("Vida")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1750661279]
 self_modulate = Color(1, 0.7607843, 1, 1)
 texture = ExtResource("2_5v8d1")
 
-[node name="Label" type="Label" parent="Sprite2D"]
+[node name="Label" type="Label" parent="Sprite2D" unique_id=1706964288]
 offset_left = -20.0
 offset_top = -14.0
 offset_right = 20.0
 offset_bottom = 9.0
 text = "carta"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1642993139]
 offset_left = -25.0
 offset_top = -41.0
 offset_right = 25.0
 offset_bottom = 41.0
 theme = SubResource("Theme_om27y")
+
+[node name="SistemaVida" type="Node" parent="." unique_id=1636874608]
+script = ExtResource("4_om27y")
+metadata/_custom_type_script = "uid://dm83c2r27p37u"
+
+[node name="CarimboSprite" type="Sprite2D" parent="." unique_id=1740296219]
+
+[node name="Ataque" type="Label" parent="." unique_id=1729145581]
+offset_left = -23.0
+offset_top = 25.0
+offset_right = -3.0
+offset_bottom = 40.0
+text = "20"
+label_settings = SubResource("LabelSettings_pmvtw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vida" type="Label" parent="." unique_id=694575354]
+offset_left = 5.0
+offset_top = 25.0
+offset_right = 25.0
+offset_bottom = 40.0
+text = "20"
+label_settings = SubResource("LabelSettings_vc0oh")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
