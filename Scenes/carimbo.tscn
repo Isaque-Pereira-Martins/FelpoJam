@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://43v36aqwair4"]
+
+[ext_resource type="Script" uid="uid://jw6k2d80ubf6" path="res://Scripts/Carimbo.gd" id="1_3e0gr"]
+[ext_resource type="Texture2D" uid="uid://cp0bbcbdc88qf" path="res://Sprites/CarimboPH.png" id="1_ijstt"]
+
+[node name="Carimbo" type="Node2D" unique_id=381225630 node_paths=PackedStringArray("button", "sprite")]
+script = ExtResource("1_3e0gr")
+button = NodePath("Button")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=562552725]
+texture = ExtResource("1_ijstt")
+
+[node name="Button" type="Button" parent="." unique_id=1548375198]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -9.0
+offset_top = -12.0
+offset_right = 9.0
+offset_bottom = 11.0

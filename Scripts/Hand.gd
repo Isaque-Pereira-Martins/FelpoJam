@@ -36,3 +36,4 @@ func create_holder() -> void:
 func new_card(card: Carta) -> void:
 	create_holder()
 	card.go_to_holder(holders[-1])
+	holders[-1].link_card(card)

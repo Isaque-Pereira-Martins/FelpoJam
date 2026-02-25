@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqyxavmryfh4n"]
+[gd_scene format=3 uid="uid://dqyxavmryfh4n"]
 
 [ext_resource type="Script" uid="uid://cwjhpalc2wxg8" path="res://Scripts/battle.gd" id="1_1ruyk"]
 [ext_resource type="Texture2D" uid="uid://crwd1pjqtbjqp" path="res://Sprites/In-game (640x360).png" id="1_w7k78"]
+[ext_resource type="Texture2D" uid="uid://5rpdoejtuxgn" path="res://Sprites/BKPH.png" id="3_fonr4"]
 [ext_resource type="PackedScene" uid="uid://bc27q2q41aq1n" path="res://Scenes/hand.tscn" id="4_1otgo"]
 [ext_resource type="PackedScene" uid="uid://b7cpqacelmuc" path="res://Scenes/line.tscn" id="5_f6xt6"]
 [ext_resource type="PackedScene" uid="uid://bv28q0dr24qtj" path="res://Scenes/deck.tscn" id="5_pd5xk"]
@@ -12,104 +13,184 @@
 [ext_resource type="Resource" uid="uid://dew3gdv3q1uu1" path="res://Cartas/Dia 1/CartaTeste1.tres" id="8_xkp4y"]
 [ext_resource type="Resource" uid="uid://cpgkd8tjvwek7" path="res://Cartas/Dia 1/CartaTeste2.tres" id="9_vd41i"]
 [ext_resource type="Resource" uid="uid://ektds67omiv4" path="res://Cartas/Dia 1/CartaTeste3.tres" id="10_nne6o"]
+[ext_resource type="PackedScene" uid="uid://b5h6n5rvsmmql" path="res://Scenes/portrait.tscn" id="11_xkp4y"]
 [ext_resource type="PackedScene" uid="uid://cc6xvhrslapq0" path="res://Scenes/paninel_atributos.tscn" id="13_fonr4"]
+[ext_resource type="Script" uid="uid://dm83c2r27p37u" path="res://Scripts/SistemaVida.gd" id="14_486ce"]
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="14_vd41i"]
+[ext_resource type="PackedScene" uid="uid://ckx17c32k3rtf" path="res://Scenes/round_toggler.tscn" id="16_nne6o"]
+[ext_resource type="PackedScene" uid="uid://wq4y5asasmuc" path="res://Scenes/coin.tscn" id="18_7vlph"]
+[ext_resource type="PackedScene" uid="uid://db3ee3ne82pyx" path="res://Scenes/display_carimbo.tscn" id="20_387br"]
+[ext_resource type="PackedScene" uid="uid://btc3lys11iha1" path="res://Scenes/lose_display.tscn" id="21_emx8f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ww2ai"]
-font_color = Color(0, 0, 0, 1)
+font = ExtResource("14_vd41i")
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
-[node name="Battle" type="Node2D" node_paths=PackedStringArray("coins_display", "jogador", "inimigo", "painel")]
+[node name="Battle" type="Node2D" unique_id=1884030731 node_paths=PackedStringArray("coins_display", "jogador", "inimigo", "painel", "stop_mouse", "round_text", "toggler", "deselect", "display_carimbo", "lose_display")]
 script = ExtResource("1_1ruyk")
-coins_display = NodePath("MoneyDisplay")
+coins_display = NodePath("UI/MoneyDisplay")
 jogador = NodePath("Players/Jogador")
 inimigo = NodePath("Players/Inimigo")
-painel = NodePath("PaninelAtributos")
+painel = NodePath("UI/PaninelAtributos")
+stop_mouse = NodePath("UI/StopMouse")
+round_text = NodePath("UI/Round")
+toggler = NodePath("UI/RoundToggler")
+deselect = NodePath("Deselect")
+display_carimbo = NodePath("UI/DisplayCarimbo")
+lose_display = NodePath("UI/Lose_Display")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=152865990]
+visible = false
+z_index = -1
 texture = ExtResource("1_w7k78")
 centered = false
 
-[node name="Players" type="Node" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1842254592]
+z_index = -1
+texture = ExtResource("3_fonr4")
+centered = false
 
-[node name="Jogador" type="Node" parent="Players" node_paths=PackedStringArray("line", "hand", "deck", "sistemaDinheiro", "moneyLabel", "enemie")]
+[node name="Deselect" type="Button" parent="." unique_id=118647204]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Players" type="Node" parent="." unique_id=1810490018]
+
+[node name="Jogador" type="Node" parent="Players" unique_id=1843127464 node_paths=PackedStringArray("line", "hand", "deck", "sistemaDinheiro", "sistemaVida", "moneyLabel", "enemie", "portrait")]
 script = ExtResource("6_ww2ai")
 line = NodePath("../../Jogador/Line")
 hand = NodePath("../../Jogador/Hand")
 deck = NodePath("../../Jogador/Deck")
 sistemaDinheiro = NodePath("../../Sistemas/SistemaDinheiro_Player")
-moneyLabel = NodePath("../../Label")
+sistemaVida = NodePath("../../Sistemas/SistemaVida_Player")
+moneyLabel = NodePath("../../UI/Money")
 enemie = NodePath("../Inimigo")
+portrait = NodePath("../../Jogador/Portrait")
 metadata/_custom_type_script = "uid://vhj4tjpsqoia"
 
-[node name="Inimigo" type="Node" parent="Players" node_paths=PackedStringArray("line", "hand", "deck", "sistemaDinheiro", "enemie")]
+[node name="Inimigo" type="Node" parent="Players" unique_id=1882256743 node_paths=PackedStringArray("line", "hand", "deck", "sistemaDinheiro", "sistemaVida", "enemie", "portrait")]
 script = ExtResource("6_ww2ai")
 line = NodePath("../../Inimigo/Line")
 hand = NodePath("../../Inimigo/Hand")
 deck = NodePath("../../Inimigo/Deck")
 sistemaDinheiro = NodePath("../../Sistemas/SistemaDinheiro_Inimigo")
+sistemaVida = NodePath("../../Sistemas/SistemaVida_Inimigo")
 enemie = NodePath("../Jogador")
+portrait = NodePath("../../Inimigo/Portrait")
 metadata/_custom_type_script = "uid://vhj4tjpsqoia"
 
-[node name="Jogador" type="Node" parent="."]
+[node name="Jogador" type="Node" parent="." unique_id=772403808]
 
-[node name="Line" parent="Jogador" instance=ExtResource("5_f6xt6")]
+[node name="Line" parent="Jogador" unique_id=806667132 instance=ExtResource("5_f6xt6")]
 position = Vector2(320, 211)
 
-[node name="Hand" parent="Jogador" instance=ExtResource("4_1otgo")]
-position = Vector2(320, 295)
+[node name="Hand" parent="Jogador" unique_id=1472384206 instance=ExtResource("4_1otgo")]
+position = Vector2(320, 310)
 
-[node name="Deck" parent="Jogador" node_paths=PackedStringArray("hand") instance=ExtResource("5_pd5xk")]
+[node name="Deck" parent="Jogador" unique_id=779635910 node_paths=PackedStringArray("hand") instance=ExtResource("5_pd5xk")]
 position = Vector2(495, 296)
 hand = NodePath("../Hand")
 Atributos = Array[ExtResource("7_heh15")]([ExtResource("8_xkp4y"), ExtResource("9_vd41i"), ExtResource("10_nne6o"), ExtResource("8_xkp4y"), ExtResource("9_vd41i"), ExtResource("10_nne6o")])
 
-[node name="Inimigo" type="Node" parent="."]
+[node name="Portrait" parent="Jogador" unique_id=1480748846 instance=ExtResource("11_xkp4y")]
+position = Vector2(575, 302)
 
-[node name="Hand" parent="Inimigo" instance=ExtResource("4_1otgo")]
-position = Vector2(320, 34)
+[node name="Inimigo" type="Node" parent="." unique_id=791877346]
+
+[node name="Hand" parent="Inimigo" unique_id=2590985 instance=ExtResource("4_1otgo")]
+position = Vector2(320, 50)
 rotation = 3.1415927
 
-[node name="Line" parent="Inimigo" instance=ExtResource("5_f6xt6")]
+[node name="Line" parent="Inimigo" unique_id=1766148314 instance=ExtResource("5_f6xt6")]
 position = Vector2(318, 128)
 rotation = 3.1415927
 
-[node name="Deck" parent="Inimigo" node_paths=PackedStringArray("hand") instance=ExtResource("5_pd5xk")]
+[node name="Deck" parent="Inimigo" unique_id=1814135973 node_paths=PackedStringArray("hand") instance=ExtResource("5_pd5xk")]
 position = Vector2(142, 66)
 rotation = -3.1415925
 hand = NodePath("../Hand")
 Atributos = Array[ExtResource("7_heh15")]([ExtResource("8_xkp4y"), ExtResource("9_vd41i"), ExtResource("10_nne6o"), ExtResource("8_xkp4y"), ExtResource("9_vd41i"), ExtResource("10_nne6o")])
 
-[node name="Sistemas" type="Node" parent="."]
+[node name="Portrait" parent="Inimigo" unique_id=130935030 instance=ExtResource("11_xkp4y")]
+position = Vector2(65, 56)
 
-[node name="SistemaDinheiro_Player" type="Node" parent="Sistemas"]
+[node name="Sistemas" type="Node" parent="." unique_id=1558391776]
+
+[node name="SistemaDinheiro_Player" type="Node" parent="Sistemas" unique_id=1549895886]
 script = ExtResource("7_lrv64")
 metadata/_custom_type_script = "uid://h54dtl7tmx1l"
 
-[node name="SistemaDinheiro_Inimigo" type="Node" parent="Sistemas"]
+[node name="SistemaDinheiro_Inimigo" type="Node" parent="Sistemas" unique_id=1392876]
 script = ExtResource("7_lrv64")
 current_money = 1000
 metadata/_custom_type_script = "uid://h54dtl7tmx1l"
 
-[node name="MoneyDisplay" parent="." instance=ExtResource("8_lrv64")]
+[node name="SistemaVida_Inimigo" type="Node" parent="Sistemas" unique_id=120649013]
+script = ExtResource("14_486ce")
+max_health = 20
+metadata/_custom_type_script = "uid://dm83c2r27p37u"
+
+[node name="SistemaVida_Player" type="Node" parent="Sistemas" unique_id=821452638]
+script = ExtResource("14_486ce")
+max_health = 20
+metadata/_custom_type_script = "uid://dm83c2r27p37u"
+
+[node name="UI" type="Node" parent="." unique_id=932220261]
+
+[node name="DisplayCarimbo" parent="UI" unique_id=1591427210 instance=ExtResource("20_387br")]
+visible = false
+position = Vector2(106.00001, 164.00002)
+scale = Vector2(1.3, 1.3)
+
+[node name="MoneyDisplay" parent="UI" unique_id=247625448 instance=ExtResource("8_lrv64")]
 position = Vector2(120, 330)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 543.0
-offset_top = 40.0
-offset_right = 583.0
-offset_bottom = 63.0
+[node name="Money" type="Label" parent="UI" unique_id=1027649016]
+offset_left = 569.0
+offset_top = 21.0
+offset_right = 609.0
+offset_bottom = 44.0
 text = "0"
 label_settings = SubResource("LabelSettings_ww2ai")
 
-[node name="EndRound" type="Button" parent="."]
+[node name="Round" type="Label" parent="UI" unique_id=1024347929]
+offset_left = 21.0
+offset_top = 171.0
+offset_right = 91.0
+offset_bottom = 191.0
+text = "Round 0"
+label_settings = SubResource("LabelSettings_ww2ai")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndRound" type="Button" parent="UI" unique_id=374727491]
 offset_left = 13.0
-offset_top = 253.0
+offset_top = 266.0
 offset_right = 147.0
-offset_bottom = 284.0
+offset_bottom = 297.0
 scale = Vector2(0.63456976, 0.8832238)
 text = "Encerrar Round"
 
-[node name="PaninelAtributos" parent="." instance=ExtResource("13_fonr4")]
+[node name="PaninelAtributos" parent="UI" unique_id=1542605855 instance=ExtResource("13_fonr4")]
 visible = false
 position = Vector2(543, 162)
 
-[connection signal="button_up" from="EndRound" to="." method="_on_end_round_button_up"]
+[node name="StopMouse" type="Panel" parent="UI" unique_id=430524217]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="RoundToggler" parent="UI" unique_id=729683889 instance=ExtResource("16_nne6o")]
+position = Vector2(55, 211)
+
+[node name="Coin" parent="UI" unique_id=528850258 instance=ExtResource("18_7vlph")]
+position = Vector2(552, 29)
+
+[node name="Lose_Display" parent="UI" unique_id=932521676 instance=ExtResource("21_emx8f")]
+visible = false
+position = Vector2(320, 160)
+
+[connection signal="button_up" from="UI/EndRound" to="." method="_on_end_round_button_up"]

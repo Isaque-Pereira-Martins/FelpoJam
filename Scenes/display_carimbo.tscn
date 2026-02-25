@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://db3ee3ne82pyx"]
+
+[ext_resource type="Script" uid="uid://b3ndw3u08o4vr" path="res://Scripts/display_carimbo.gd" id="1_6cmn2"]
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="1_cv7ej"]
+[ext_resource type="PackedScene" uid="uid://43v36aqwair4" path="res://Scenes/carimbo.tscn" id="2_6cmn2"]
+[ext_resource type="Script" uid="uid://dd7hl2tbb1yge" path="res://Resources/atributo1_carimbo.gd" id="4_u6gco"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6gco"]
+font = ExtResource("1_cv7ej")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vwdcx"]
+font = ExtResource("1_cv7ej")
+
+[node name="DisplayCarimbo" type="Node2D" unique_id=1591427210 node_paths=PackedStringArray("carimbo1", "carimbo2", "label1", "label2")]
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_6cmn2")
+carimbo1 = NodePath("PanelContainer/VBoxContainer/Control/Carimbo")
+carimbo2 = NodePath("PanelContainer/VBoxContainer/Control2/Carimbo")
+label1 = NodePath("PanelContainer/VBoxContainer/Carimbo1")
+label2 = NodePath("PanelContainer/VBoxContainer/Carimbo2")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=557228523]
+offset_right = 64.0
+offset_bottom = 92.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1052991783]
+layout_mode = 2
+
+[node name="Carimbo1" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2035128700]
+layout_mode = 2
+text = "o"
+label_settings = SubResource("LabelSettings_u6gco")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer" unique_id=316338329]
+custom_minimum_size = Vector2(18, 23)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Carimbo" parent="PanelContainer/VBoxContainer/Control" unique_id=381225630 node_paths=PackedStringArray("atributo") instance=ExtResource("2_6cmn2")]
+position = Vector2(9, 12)
+atributo = NodePath("../../../../atributo1")
+
+[node name="Carimbo2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=106904595]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_vwdcx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer" unique_id=1491508927]
+custom_minimum_size = Vector2(18, 23)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Carimbo" parent="PanelContainer/VBoxContainer/Control2" unique_id=510726669 node_paths=PackedStringArray("atributo") instance=ExtResource("2_6cmn2")]
+position = Vector2(9, 12)
+atributo = NodePath("../../../../atributo1")
+
+[node name="atributo1" type="Node" parent="." unique_id=1160779623]
+script = ExtResource("4_u6gco")
+metadata/_custom_type_script = "uid://dd7hl2tbb1yge"

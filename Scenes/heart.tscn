@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bc4ra1nnrsccd"]
+
+[ext_resource type="Script" uid="uid://cr8vm305ed7xe" path="res://Scripts/heart.gd" id="1_4obt7"]
+[ext_resource type="Texture2D" uid="uid://bqq6mh7p4lg0w" path="res://Sprites/vida0.png" id="2_atbr1"]
+[ext_resource type="Texture2D" uid="uid://dvlbvgqx12mo3" path="res://Sprites/vida25.png" id="3_rhnby"]
+[ext_resource type="Texture2D" uid="uid://dtiqrt2s0k1x3" path="res://Sprites/vida50.png" id="4_gdh3h"]
+[ext_resource type="Texture2D" uid="uid://b80oik60ntk7n" path="res://Sprites/vida75.png" id="5_hyv53"]
+[ext_resource type="Texture2D" uid="uid://cvrhpivxbtipg" path="res://Sprites/vida100.png" id="6_3aedr"]
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="7_eekui"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wuhaj"]
+font = ExtResource("7_eekui")
+font_size = 15
+outline_size = 4
+outline_color = Color(0.27058825, 0.16078432, 0.24705882, 1)
+
+[node name="Heart" type="Node2D" unique_id=1332212175 node_paths=PackedStringArray("sprite", "life_text")]
+script = ExtResource("1_4obt7")
+sprite = NodePath("Sprite2D")
+texture = Array[CompressedTexture2D]([ExtResource("2_atbr1"), ExtResource("3_rhnby"), ExtResource("4_gdh3h"), ExtResource("5_hyv53"), ExtResource("6_3aedr")])
+life_text = NodePath("LifeText")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1461863055]
+texture = ExtResource("6_3aedr")
+
+[node name="LifeText" type="Label" parent="." unique_id=84271632]
+offset_left = -10.0
+offset_top = -11.0
+offset_right = 12.0
+offset_bottom = 8.0
+text = "20"
+label_settings = SubResource("LabelSettings_wuhaj")
+horizontal_alignment = 1
+vertical_alignment = 1
