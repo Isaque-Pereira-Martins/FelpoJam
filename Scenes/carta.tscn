@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dcs8ercy6e7cv"]
 
 [ext_resource type="Script" uid="uid://mwf6h075mr02" path="res://Scripts/carta.gd" id="1_yasdf"]
-[ext_resource type="Texture2D" uid="uid://c4h0w4prat27n" path="res://Sprites/CartaPH.png" id="2_5v8d1"]
-[ext_resource type="Resource" uid="uid://dew3gdv3q1uu1" path="res://Cartas/Dia 1/CartaTeste1.tres" id="2_mk6xv"]
+[ext_resource type="Texture2D" uid="uid://c4wbh2j2x6hfm" path="res://Sprites/cartaPlayerNormal.png" id="2_vc0oh"]
 [ext_resource type="Script" uid="uid://dm83c2r27p37u" path="res://Scripts/SistemaVida.gd" id="4_om27y"]
 [ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="5_stux1"]
+[ext_resource type="Texture2D" uid="uid://do3vf6lf3h2lm" path="res://Sprites/CarimbadaPH.png" id="6_pmvtw"]
+[ext_resource type="Texture2D" uid="uid://bitn4n3bffc7v" path="res://Sprites/SwordPH.png" id="7_vc0oh"]
+[ext_resource type="Texture2D" uid="uid://dndybbmibwkxw" path="res://Sprites/BrilhoCarta-Sheet.png" id="8_d3djj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk6xv"]
 
@@ -13,34 +15,136 @@ Button/styles/normal = SubResource("StyleBoxEmpty_mk6xv")
 
 [sub_resource type="LabelSettings" id="LabelSettings_pmvtw"]
 font = ExtResource("5_stux1")
-font_color = Color(1, 0.050980393, 0.011764706, 1)
+font_size = 11
+font_color = Color(1, 0.6039216, 0.011764706, 1)
+outline_size = 2
+outline_color = Color(0.19607843, 0.15294118, 0.3254902, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vc0oh"]
 font = ExtResource("5_stux1")
+font_size = 11
 font_color = Color(0.03137255, 1, 0.13725491, 1)
+outline_size = 2
+outline_color = Color(0.19607843, 0.15294118, 0.3254902, 1)
 
-[node name="Carta" type="Node2D" unique_id=520873300 node_paths=PackedStringArray("life", "button", "carimbo_sprite", "ataque_texto", "vida_texto")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvl5u"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(0, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_novlw"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(54, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xy5l"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(108, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qau3w"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(162, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s1u8"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(216, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i21rh"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(270, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unnnn"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(324, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eawdo"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(378, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64xus"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(432, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06x3l"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(486, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbklq"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(540, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu7b5"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(594, 0, 54, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw5v2"]
+atlas = ExtResource("8_d3djj")
+region = Rect2(648, 0, 54, 86)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bglxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvl5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_novlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xy5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qau3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s1u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i21rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unnnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eawdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64xus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06x3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbklq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu7b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw5v2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Carta" type="Node2D" unique_id=520873300 node_paths=PackedStringArray("life", "button", "selo_sprite", "ataque_texto", "vida_texto", "carimbada_sprite", "sword_sprite", "brilho", "sprite")]
 z_index = 1
 script = ExtResource("1_yasdf")
-atributos = ExtResource("2_mk6xv")
 life = NodePath("SistemaVida")
 button = NodePath("Button")
-carimbo_sprite = NodePath("CarimboSprite")
+selo_sprite = NodePath("SeloSprite")
 ataque_texto = NodePath("Ataque")
 vida_texto = NodePath("Vida")
+carimbada_sprite = NodePath("Carimbada")
+sword_sprite = NodePath("Sword")
+brilho = NodePath("Brilho")
+sprite = NodePath("Sprite")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1750661279]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1750661279]
 self_modulate = Color(1, 0.7607843, 1, 1)
-texture = ExtResource("2_5v8d1")
-
-[node name="Label" type="Label" parent="Sprite2D" unique_id=1706964288]
-offset_left = -20.0
-offset_top = -14.0
-offset_right = 20.0
-offset_bottom = 9.0
-text = "carta"
+texture = ExtResource("2_vc0oh")
 
 [node name="Button" type="Button" parent="." unique_id=1642993139]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -25.0
 offset_top = -41.0
 offset_right = 25.0
@@ -51,26 +155,44 @@ theme = SubResource("Theme_om27y")
 script = ExtResource("4_om27y")
 metadata/_custom_type_script = "uid://dm83c2r27p37u"
 
-[node name="CarimboSprite" type="Sprite2D" parent="." unique_id=1740296219]
+[node name="SeloSprite" type="Sprite2D" parent="." unique_id=1740296219]
+position = Vector2(-10, -14.5)
 
 [node name="Ataque" type="Label" parent="." unique_id=1729145581]
-offset_left = -23.0
-offset_top = 25.0
-offset_right = -3.0
-offset_bottom = 40.0
+offset_left = -28.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = 25.0
 text = "20"
 label_settings = SubResource("LabelSettings_pmvtw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Vida" type="Label" parent="." unique_id=694575354]
-offset_left = 5.0
-offset_top = 25.0
-offset_right = 25.0
-offset_bottom = 40.0
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 29.0
+offset_bottom = 25.0
 text = "20"
 label_settings = SubResource("LabelSettings_vc0oh")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Carimbada" type="Sprite2D" parent="." unique_id=1165921176]
+visible = false
+position = Vector2(2, 18)
+rotation = -0.47472957
+scale = Vector2(3, 3)
+texture = ExtResource("6_pmvtw")
+
+[node name="Sword" type="Sprite2D" parent="." unique_id=1968993761]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("7_vc0oh")
+
+[node name="Brilho" type="AnimatedSprite2D" parent="." unique_id=766368440]
+visible = false
+sprite_frames = SubResource("SpriteFrames_bglxl")
+autoplay = "default"
+frame_progress = 0.37739626
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://bsdy1o1bsqo4i"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_67efe"]
+
+[resource]
+script = ExtResource("1_67efe")
+texto = "Querido Theo. Infelizmente no próximo verão estarei ocupado, consegui umcargo de escrevente. O trabalho não me deixa sair no verão. Entretanto podemos nos ver com uma maior frequência após o verão! Eu te amo meu amor"
+classe = "Guerreiro"
+emocao = "Paixão"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

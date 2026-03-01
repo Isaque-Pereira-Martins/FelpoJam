@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://xpri03c4k6x5"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_2vysi"]
+
+[resource]
+script = ExtResource("1_2vysi")
+texto = "DEFENDA O REINO!"
+classe = "Guerreiro"
+emocao = "Raiva"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

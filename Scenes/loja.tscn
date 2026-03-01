@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://cr3lm8b71n58q"]
+
+[ext_resource type="Texture2D" uid="uid://5rpdoejtuxgn" path="res://Sprites/BKPH.png" id="1_yme5o"]
+[ext_resource type="Texture2D" uid="uid://b4nexuorjpdic" path="res://Sprites/Loja/BalcaoPH.png" id="2_ksi35"]
+[ext_resource type="Texture2D" uid="uid://1x4a5ern2k8a" path="res://Sprites/seloEspada.png" id="3_jk3ti"]
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="4_876ai"]
+[ext_resource type="Texture2D" uid="uid://ctxpgyf5l8rnb" path="res://Sprites/Loja/GOTINTA.png" id="5_86eh8"]
+[ext_resource type="Texture2D" uid="uid://hsvhv3vndlgh" path="res://Sprites/seloFeitico.png" id="6_s78nu"]
+[ext_resource type="Texture2D" uid="uid://dt4t0ofahlv12" path="res://Sprites/seloMira.png" id="7_4qqw2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ornrv"]
+font = ExtResource("4_876ai")
+font_size = 9
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jc2mj"]
+font = ExtResource("4_876ai")
+font_size = 9
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2daw"]
+font = ExtResource("4_876ai")
+font_size = 9
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Loja" type="Node2D" unique_id=2124801772]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1722060373]
+texture = ExtResource("1_yme5o")
+centered = false
+
+[node name="Balcao" type="Sprite2D" parent="." unique_id=445063277]
+position = Vector2(320, 180)
+texture = ExtResource("2_ksi35")
+
+[node name="Selo1" type="Sprite2D" parent="Balcao" unique_id=1036658367]
+position = Vector2(-145, 55)
+scale = Vector2(3, 3)
+texture = ExtResource("3_jk3ti")
+
+[node name="Button" type="Button" parent="Balcao/Selo1" unique_id=1823627162]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Balcao/Selo1" unique_id=1863568402]
+offset_left = -7.333336
+offset_top = 8.000001
+offset_right = -1.3333349
+offset_bottom = 17.0
+text = "3"
+label_settings = SubResource("LabelSettings_ornrv")
+
+[node name="Coin" type="Sprite2D" parent="Balcao/Selo1" unique_id=1895444628]
+position = Vector2(4.666664, 12.333336)
+scale = Vector2(0.4166665, 0.4166665)
+texture = ExtResource("5_86eh8")
+
+[node name="Selo2" type="Sprite2D" parent="Balcao" unique_id=921837228]
+position = Vector2(-64, 55)
+scale = Vector2(3, 3)
+texture = ExtResource("6_s78nu")
+
+[node name="Button" type="Button" parent="Balcao/Selo2" unique_id=860845674]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -7.666664
+offset_top = -7.666664
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Balcao/Selo2" unique_id=1071902537]
+offset_left = -7.333334
+offset_top = 8.0
+offset_right = -1.333334
+offset_bottom = 17.0
+text = "3"
+label_settings = SubResource("LabelSettings_jc2mj")
+
+[node name="Coin" type="Sprite2D" parent="Balcao/Selo2" unique_id=544415451]
+position = Vector2(5, 12.333336)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_86eh8")
+
+[node name="Selo3" type="Sprite2D" parent="Balcao" unique_id=1504013516]
+position = Vector2(19, 55)
+scale = Vector2(3, 3)
+texture = ExtResource("7_4qqw2")
+
+[node name="Button" type="Button" parent="Balcao/Selo3" unique_id=1064058620]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Balcao/Selo3" unique_id=89280597]
+offset_left = -7.333334
+offset_top = 7.9999995
+offset_right = -1.333334
+offset_bottom = 17.0
+text = "3"
+label_settings = SubResource("LabelSettings_a2daw")
+
+[node name="Coin" type="Sprite2D" parent="Balcao/Selo3" unique_id=790656823]
+position = Vector2(4.6666718, 12.333336)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_86eh8")

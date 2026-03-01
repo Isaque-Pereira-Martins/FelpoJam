@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://decix3n51a8c3"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_4lmu3"]
+
+[resource]
+script = ExtResource("1_4lmu3")
+texto = "CONTAMOS COM VOCÊ!"
+classe = "Guerreiro"
+emocao = "Raiva"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

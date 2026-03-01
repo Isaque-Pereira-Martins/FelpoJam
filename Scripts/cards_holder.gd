@@ -6,25 +6,26 @@ var actual_card : Carta = null
 @export_enum("HandHolder", "LineHolder") var holder_tipe
 var linked = false
 var player: Player = null
+var is_player : bool = true #diz se o holder é do jogador ou do inimigo
 
 signal card_out(holder: Holder)
 
 func _on_button_button_up() -> void:
+	Globals.selo_select.emit(self)
 	var card = Globals.Selected_Card
 	if card == null or actual_card != null or card.walking:
 		#caso o jogador clique no holder sem carta selecionada ou holder já com carta ou com carta selecionada já em transição
 		return
-	if card.state == "InLine": #Não permite que uma carta que já esteja na arena troque de hoder
+	if card.state == "InLine" or not is_player or not player.jogando: #Não permite que uma carta que já esteja na arena troque de hoder
 		Globals.Select_card(null)
 		return
 	set_card_request(Globals.Selected_Card)
-	
 
 func card_leaves() -> void:
 	if actual_card.actual_holder == self:
 		return
-	unlink()
 	card_out.emit(self)
+	unlink()
 
 func update_card() -> void:
 	if actual_card == null:

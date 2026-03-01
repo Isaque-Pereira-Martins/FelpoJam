@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://cc1uwlutv3pk8"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_nyjys"]
+
+[resource]
+script = ExtResource("1_nyjys")
+texto = "Querido Poe. Nosso ultimo encontro foi maravilhoso! Não vejo a hora de nos vermos novamente. Haverá uma peça sobre a divina comédia no próximo verão. Adoraria ver com você."
+classe = "Mago"
+emocao = "Alegria"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

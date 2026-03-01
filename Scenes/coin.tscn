@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://wq4y5asasmuc"]
+[gd_scene format=3 uid="uid://wq4y5asasmuc"]
 
-[ext_resource type="Texture2D" uid="uid://c4h0w4prat27n" path="res://Sprites/CartaPH.png" id="1_2qo34"]
+[ext_resource type="Texture2D" uid="uid://c6lgxi7i5usmw" path="res://Sprites/carimbo.png" id="1_2qo34"]
 
-[node name="Coin" type="Node2D"]
+[node name="Coin" type="Node2D" unique_id=943874711]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1284176795]
 self_modulate = Color(1, 1, 0, 1)
 position = Vector2(1.0430813e-07, -1.1920929e-07)
-scale = Vector2(0.32467732, 0.23368573)
+scale = Vector2(1, 0.72)
 texture = ExtResource("1_2qo34")

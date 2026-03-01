@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://ckw8ljru1unc0"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_3pr6s"]
+
+[resource]
+script = ExtResource("1_3pr6s")
+texto = "Caro Theo. Consegui uma carruagem para Lisboa esteja na praça às 8:30 do dia 5 de Dezembro."
+classe = "Guerreiro"
+emocao = "Alegria"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

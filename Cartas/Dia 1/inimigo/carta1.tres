@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://ds5ipksl6y7bn"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_fhuij"]
+
+[resource]
+script = ExtResource("1_fhuij")
+texto = "VENHA PARA A GUERRA HOJE!"
+classe = "Guerreiro"
+emocao = "Raiva"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://dvqxwecpg82qn"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_bsppd"]
+
+[resource]
+script = ExtResource("1_bsppd")
+texto = "Querido Theo, dia 17 as 6:30 irei a lisboa por carruagem, me espere na praça as 7:30. Fico feliz em poder te ver depois de tanto tempo. Principalmente devido as perdas que tive nos ultimos meses. É bom respirar novamente."
+classe = "Guerreiro"
+emocao = "Alegria"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

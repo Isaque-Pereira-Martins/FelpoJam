@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://43v36aqwair4"]
 
-[ext_resource type="Script" uid="uid://jw6k2d80ubf6" path="res://Scripts/Carimbo.gd" id="1_3e0gr"]
-[ext_resource type="Texture2D" uid="uid://cp0bbcbdc88qf" path="res://Sprites/CarimboPH.png" id="1_ijstt"]
+[ext_resource type="Script" uid="uid://cnlqle22tk8jt" path="res://Scripts/Selo.gd" id="1_3e0gr"]
+[ext_resource type="Texture2D" uid="uid://1x4a5ern2k8a" path="res://Sprites/seloEspada.png" id="2_rr8up"]
 
-[node name="Carimbo" type="Node2D" unique_id=381225630 node_paths=PackedStringArray("button", "sprite")]
+[node name="Selo" type="Node2D" unique_id=381225630 node_paths=PackedStringArray("button", "sprite")]
 script = ExtResource("1_3e0gr")
 button = NodePath("Button")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=562552725]
-texture = ExtResource("1_ijstt")
+texture = ExtResource("2_rr8up")
 
 [node name="Button" type="Button" parent="." unique_id=1548375198]
 self_modulate = Color(1, 1, 1, 0)

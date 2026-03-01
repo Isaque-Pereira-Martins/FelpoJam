@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://ck5us0u4x7o1c"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_vuphn"]
+
+[resource]
+script = ExtResource("1_vuphn")
+texto = "Querido Poe. Fico feliz que vamos se ver mais frequentemente! Estava pensando porque não passas por aqui no natal? Vamos comemorar juntos! Eu também te amo!"
+classe = "Mago"
+emocao = "Paixão"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

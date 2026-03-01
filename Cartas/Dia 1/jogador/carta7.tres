@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://tj7urtmvni6"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_fjyov"]
+
+[resource]
+script = ExtResource("1_fjyov")
+texto = "Meu amor Theo. Sobre sua última cara, eu estou sendo obrigado a trabalhar para aquilo que tirou tudo de mim a alguns anos. Caso renuncie meu cargo serei um desertor. Porém prefiro morrer do que fazer os outros sofrerem o que eu sofri. Eu te amo Theo."
+classe = "Guerreiro"
+emocao = "Raiva"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

@@ -1,28 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://btodnq63lubeo"]
+[gd_scene format=3 uid="uid://btodnq63lubeo"]
 
 [ext_resource type="Script" uid="uid://2gros7lr8goj" path="res://Scripts/cards_holder.gd" id="1_7lpin"]
 [ext_resource type="Texture2D" uid="uid://c4h0w4prat27n" path="res://Sprites/CartaPH.png" id="1_knenr"]
 
-[node name="CardsHolder" type="Node2D" node_paths=PackedStringArray("marker", "button")]
+[node name="CardsHolder" type="Node2D" unique_id=143399092 node_paths=PackedStringArray("marker", "button")]
 modulate = Color(1, 1, 1, 0.35686275)
 script = ExtResource("1_7lpin")
 marker = NodePath("Position")
 button = NodePath("Button")
 
-[node name="Position" type="Marker2D" parent="."]
+[node name="Position" type="Marker2D" parent="." unique_id=686371626]
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1365559900]
 visible = false
 self_modulate = Color(0.13725491, 0.88235295, 0.13725491, 1)
 texture = ExtResource("1_knenr")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1735918382]
 offset_left = -25.0
-offset_top = -41.0
+offset_top = -30.0
 offset_right = 25.0
-offset_bottom = 41.0
+offset_bottom = 30.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=94910659]
 visible = false
 offset_left = -24.0
 offset_top = -11.0

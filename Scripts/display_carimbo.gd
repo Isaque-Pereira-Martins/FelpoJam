@@ -1,17 +1,28 @@
 class_name DisplayCarimbo extends Node2D
 
-@export var carimbo1 : Carimbo
-@export var carimbo2 : Carimbo
+@export var selo1 : Selo
+@export var selo2 : Selo
+@export var selo3 : Selo
 @export var label1 :Label
 @export var label2 : Label
+@export var label3 : Label
 var quantidades : Dictionary
 
 func _ready() -> void:
-	quantidades[carimbo1] =  2
-	quantidades[carimbo2] = 0
+	quantidades[selo1] =  2
+	quantidades[selo2] = 2
+	quantidades[selo3] = 2
 	update_label()
-	carimbo1.display = self
-	carimbo2.display = self
+	selo1.display = self
+	selo2.display = self
+	selo3.display = self
+
+func update_selos(quantidade : Array) -> void:
+	quantidades[selo1] = quantidade[0]
+	quantidades[selo2] = quantidade[1]
+	quantidades[selo3] = quantidade[2]
+	update_label()
+	
 func popIn() -> void:
 	show()
 	var tween = create_tween()
@@ -23,13 +34,20 @@ func popOut() -> void:
 	await tween.finished
 	hide()
 	
-func request_carimbo(carimbo: Carimbo) -> bool:
-	if quantidades[carimbo] > 0 and Globals.Selected_Card.carimbo == null:
-		quantidades[carimbo] -= 1
+func request_selo(selo: Selo) -> bool:
+	if quantidades[selo] > 0 and Globals.Selected_Card.selo == null:
+		quantidades[selo] -= 1
+		if selo == selo1:
+			Globals.carimbos[0] -= 1
+		elif selo == selo2:
+			Globals.carimbos[1] -= 1
+		elif selo == selo3:
+			Globals.carimbos[2] -= 1
 		update_label()
 		return true
 	return false
 
 func update_label() -> void:
-	label1.text = str(quantidades[carimbo1])
-	label2.text = str(quantidades[carimbo2])
+	label1.text = str(quantidades[selo1])
+	label2.text = str(quantidades[selo2])
+	label3.text = str(quantidades[selo2])

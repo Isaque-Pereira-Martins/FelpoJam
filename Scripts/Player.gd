@@ -21,6 +21,21 @@ func _ready() -> void:
 	sistemaVida.health_changed.connect(life_changed)
 	sistemaVida.died.connect(f_died)
 
+func update_emotions(emotion : String) -> void:
+	var cards : Array[Carta] = []
+	for card : Carta in line.cards:
+		if card != null and card.atributos.emocao == emotion:
+			cards.append(card)
+	if cards.size() >= 2:
+		for card in cards:
+			card.buff()
+			card.brilho.show()
+	else:
+		for card in cards:
+			card.debuff()
+			card.brilho.hide()
+	
+
 func f_died() -> void:
 	died.emit(self)
 

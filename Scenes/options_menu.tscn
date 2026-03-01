@@ -7,12 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://b3w3gfb7ujhtb" path="res://Scenes/musica_fundo_player.tscn" id="5_m6e8v"]
 
 [node name="options_menu" type="Control" unique_id=288551891 node_paths=PackedStringArray("MusicaFundoPlayer")]
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
 script = ExtResource("1_l1wg4")
 MusicaFundoPlayer = NodePath("musica_fundo_player")
 
