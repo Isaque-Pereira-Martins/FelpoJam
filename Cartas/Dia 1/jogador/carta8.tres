@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://wahjd8bgmw65"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_105yh"]
+
+[resource]
+script = ExtResource("1_105yh")
+texto = "Poe.. Faz alguns meses que não recebo uma carta sua. Seu sacrifício foi muito nobre meu amor. Há alguns meses que eu vejo algumas propagandas em teu nome. Me doi muito saber o que estão fazendo com o seu legado. Espero que consiga ler isso algum dia. Com amor, seu marido Theo."
+classe = "Mago"
+emocao = "Raiva"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

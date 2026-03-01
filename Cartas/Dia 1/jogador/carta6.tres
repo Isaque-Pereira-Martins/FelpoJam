@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AtributosCarta" format=3 uid="uid://b5n1qu45iivpi"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_ioijg"]
+
+[resource]
+script = ExtResource("1_ioijg")
+texto = "Querido Poe. Você ouviu a respeito da guerra que nosso reino está travando? Você sempre foi contra guerras, mas agora trabalha como escrevente. Como fica essa situação?"
+classe = "Mago"
+emocao = "Neutro"
+metadata/_custom_type_script = "uid://cdg0vwvbxvsgr"

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://eqm3ghurk6fl"]
+
+[ext_resource type="Texture2D" uid="uid://c0ymkar2pek4q" path="res://Sprites/CarimboPH.png" id="1_6uv05"]
+[ext_resource type="Script" uid="uid://chw0xxexjxxpa" path="res://Scripts/stamp_button.gd" id="1_m2fve"]
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="2_m2fve"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_38cdr"]
+font = ExtResource("2_m2fve")
+font_size = 28
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="StampButton" type="Node2D" unique_id=317439757 node_paths=PackedStringArray("sprite", "button")]
+visible = false
+z_index = 2
+script = ExtResource("1_m2fve")
+sprite = NodePath("Sprite")
+button = NodePath("Sprite/Button")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1729734030]
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_6uv05")
+
+[node name="Texto" type="Label" parent="Sprite" unique_id=2063461472]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -118.0
+offset_top = 67.0
+offset_right = 18.0
+offset_bottom = 93.0
+grow_horizontal = 2
+text = "Carimbar"
+label_settings = SubResource("LabelSettings_38cdr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Sprite" unique_id=957363538]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -70.0
+offset_top = -50.0
+offset_right = 69.0
+offset_bottom = 89.0

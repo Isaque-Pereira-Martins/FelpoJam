@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc6xvhrslapq0"]
+[gd_scene format=3 uid="uid://cc6xvhrslapq0"]
 
 [ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="1_dyoig"]
 [ext_resource type="Script" uid="uid://lciotdx6qsdw" path="res://Scripts/painel_atributos.gd" id="1_l2qle"]
@@ -21,16 +21,16 @@ font_size = 13
 
 [sub_resource type="LabelSettings" id="LabelSettings_k7mbx"]
 font = ExtResource("1_dyoig")
-font_size = 13
+font_size = 9
 
-[node name="PaninelAtributos" type="Node2D" node_paths=PackedStringArray("classe", "emocao", "texto")]
+[node name="PaninelAtributos" type="Node2D" unique_id=997597380 node_paths=PackedStringArray("classe", "emocao", "texto")]
 scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_l2qle")
 classe = NodePath("PanelContainer/VBoxContainer/Classe/TipoClasse")
 emocao = NodePath("PanelContainer/VBoxContainer/Emocao/TipoEmocao")
 texto = NodePath("PanelContainer/VBoxContainer/PanelContainer/Texto")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1651962371]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -43,44 +43,44 @@ offset_bottom = 69.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=991841330]
 layout_mode = 2
 
-[node name="Classe" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Classe" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=707733539]
 layout_mode = 2
 
-[node name="NomeClasse" type="Label" parent="PanelContainer/VBoxContainer/Classe"]
+[node name="NomeClasse" type="Label" parent="PanelContainer/VBoxContainer/Classe" unique_id=1884174084]
 layout_mode = 2
 text = "Classe:"
 label_settings = SubResource("LabelSettings_qeyqd")
 
-[node name="TipoClasse" type="Label" parent="PanelContainer/VBoxContainer/Classe"]
+[node name="TipoClasse" type="Label" parent="PanelContainer/VBoxContainer/Classe" unique_id=976466300]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Guerreiro"
 label_settings = SubResource("LabelSettings_upb72")
 horizontal_alignment = 2
 
-[node name="Emocao" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Emocao" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1996421512]
 layout_mode = 2
 
-[node name="NomeEmocao" type="Label" parent="PanelContainer/VBoxContainer/Emocao"]
+[node name="NomeEmocao" type="Label" parent="PanelContainer/VBoxContainer/Emocao" unique_id=1739396400]
 layout_mode = 2
 text = "Emoção:"
 label_settings = SubResource("LabelSettings_rssjf")
 
-[node name="TipoEmocao" type="Label" parent="PanelContainer/VBoxContainer/Emocao"]
+[node name="TipoEmocao" type="Label" parent="PanelContainer/VBoxContainer/Emocao" unique_id=1719061768]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Raiva"
 label_settings = SubResource("LabelSettings_heh15")
 horizontal_alignment = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=1842988342]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Texto" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
+[node name="Texto" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=843514285]
 custom_minimum_size = Vector2(159, 85)
 layout_mode = 2
 size_flags_vertical = 1

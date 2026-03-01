@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="BattleAtributos" format=3 uid="uid://du1b8yeoaypdt"]
+
+[ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="1_egdtv"]
+[ext_resource type="Resource" uid="uid://decix3n51a8c3" path="res://Cartas/Dia 1/inimigo/carta8.tres" id="2_5k08k"]
+[ext_resource type="Script" uid="uid://cpfi057pjnt8w" path="res://Resources/BattleResource.gd" id="2_imjje"]
+[ext_resource type="Resource" uid="uid://xpri03c4k6x5" path="res://Cartas/Dia 1/inimigo/carta7.tres" id="3_fgyaw"]
+[ext_resource type="Resource" uid="uid://dpxni0q5ow6ay" path="res://Cartas/Dia 1/inimigo/carta6.tres" id="4_qvlvv"]
+[ext_resource type="Resource" uid="uid://bu02eerhu6upk" path="res://Cartas/Dia 1/inimigo/carta5.tres" id="5_ju20x"]
+[ext_resource type="Resource" uid="uid://dg87vl3s0tmbq" path="res://Cartas/Dia 1/inimigo/carta4.tres" id="6_ftqlb"]
+[ext_resource type="Resource" uid="uid://luy1bxpak2s2" path="res://Cartas/Dia 1/inimigo/carta3.tres" id="7_fyumu"]
+[ext_resource type="Resource" uid="uid://s660pal7f2du" path="res://Cartas/Dia 1/inimigo/carta2.tres" id="8_lxqcl"]
+[ext_resource type="Resource" uid="uid://ds5ipksl6y7bn" path="res://Cartas/Dia 1/inimigo/carta1.tres" id="9_f7qmk"]
+[ext_resource type="Texture2D" uid="uid://c8d4pfsid730d" path="res://Sprites/gato.png" id="10_5k08k"]
+[ext_resource type="Resource" uid="uid://wahjd8bgmw65" path="res://Cartas/Dia 1/jogador/carta8.tres" id="11_4d2im"]
+[ext_resource type="Resource" uid="uid://tj7urtmvni6" path="res://Cartas/Dia 1/jogador/carta7.tres" id="12_rmvsm"]
+[ext_resource type="Resource" uid="uid://b5n1qu45iivpi" path="res://Cartas/Dia 1/jogador/carta6.tres" id="13_v8hdb"]
+[ext_resource type="Resource" uid="uid://ckw8ljru1unc0" path="res://Cartas/Dia 1/jogador/carta5.tres" id="14_xr28m"]
+[ext_resource type="Resource" uid="uid://ck5us0u4x7o1c" path="res://Cartas/Dia 1/jogador/carta4.tres" id="15_bnkn0"]
+[ext_resource type="Resource" uid="uid://bsdy1o1bsqo4i" path="res://Cartas/Dia 1/jogador/carta3.tres" id="16_1pikx"]
+[ext_resource type="Resource" uid="uid://cc1uwlutv3pk8" path="res://Cartas/Dia 1/jogador/carta2.tres" id="17_gh1bw"]
+[ext_resource type="Resource" uid="uid://dvqxwecpg82qn" path="res://Cartas/Dia 1/jogador/carta1.tres" id="18_jfma4"]
+
+[resource]
+script = ExtResource("2_imjje")
+inimigo_cartas = Array[ExtResource("1_egdtv")]([ExtResource("2_5k08k"), ExtResource("3_fgyaw"), ExtResource("4_qvlvv"), ExtResource("5_ju20x"), ExtResource("6_ftqlb"), ExtResource("7_fyumu"), ExtResource("8_lxqcl"), ExtResource("9_f7qmk")])
+player_cartas = Array[ExtResource("1_egdtv")]([ExtResource("11_4d2im"), ExtResource("12_rmvsm"), ExtResource("13_v8hdb"), ExtResource("14_xr28m"), ExtResource("15_bnkn0"), ExtResource("16_1pikx"), ExtResource("17_gh1bw"), ExtResource("18_jfma4")])
+inimigo_portrait = ExtResource("10_5k08k")
+dia = 1
+metadata/_custom_type_script = "uid://cpfi057pjnt8w"

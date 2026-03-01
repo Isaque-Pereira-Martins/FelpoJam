@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwjhpalc2wxg8" path="res://Scripts/battle.gd" id="1_1ruyk"]
 [ext_resource type="Texture2D" uid="uid://crwd1pjqtbjqp" path="res://Sprites/In-game (640x360).png" id="1_w7k78"]
+[ext_resource type="Resource" uid="uid://du1b8yeoaypdt" path="res://Batalhas/battle1.tres" id="2_5gfn5"]
 [ext_resource type="Texture2D" uid="uid://5rpdoejtuxgn" path="res://Sprites/BKPH.png" id="3_fonr4"]
 [ext_resource type="PackedScene" uid="uid://bc27q2q41aq1n" path="res://Scenes/hand.tscn" id="4_1otgo"]
 [ext_resource type="PackedScene" uid="uid://b7cpqacelmuc" path="res://Scenes/line.tscn" id="5_f6xt6"]
@@ -10,38 +11,71 @@
 [ext_resource type="Script" uid="uid://cdg0vwvbxvsgr" path="res://Resources/AtributosCarta.gd" id="7_heh15"]
 [ext_resource type="Script" uid="uid://h54dtl7tmx1l" path="res://Scripts/SistemaDinheiro.gd" id="7_lrv64"]
 [ext_resource type="PackedScene" uid="uid://dyfsi4t48qwc1" path="res://Scenes/money_display.tscn" id="8_lrv64"]
-[ext_resource type="Resource" uid="uid://dew3gdv3q1uu1" path="res://Cartas/Dia 1/CartaTeste1.tres" id="8_xkp4y"]
-[ext_resource type="Resource" uid="uid://cpgkd8tjvwek7" path="res://Cartas/Dia 1/CartaTeste2.tres" id="9_vd41i"]
-[ext_resource type="Resource" uid="uid://ektds67omiv4" path="res://Cartas/Dia 1/CartaTeste3.tres" id="10_nne6o"]
+[ext_resource type="Resource" uid="uid://wahjd8bgmw65" path="res://Cartas/Dia 1/jogador/carta8.tres" id="9_s1dsa"]
+[ext_resource type="Resource" uid="uid://tj7urtmvni6" path="res://Cartas/Dia 1/jogador/carta7.tres" id="10_5gfn5"]
+[ext_resource type="Resource" uid="uid://b5n1qu45iivpi" path="res://Cartas/Dia 1/jogador/carta6.tres" id="11_hatvd"]
 [ext_resource type="PackedScene" uid="uid://b5h6n5rvsmmql" path="res://Scenes/portrait.tscn" id="11_xkp4y"]
+[ext_resource type="Resource" uid="uid://ckw8ljru1unc0" path="res://Cartas/Dia 1/jogador/carta5.tres" id="12_dndgb"]
 [ext_resource type="PackedScene" uid="uid://cc6xvhrslapq0" path="res://Scenes/paninel_atributos.tscn" id="13_fonr4"]
+[ext_resource type="Resource" uid="uid://ck5us0u4x7o1c" path="res://Cartas/Dia 1/jogador/carta4.tres" id="13_sk0lo"]
 [ext_resource type="Script" uid="uid://dm83c2r27p37u" path="res://Scripts/SistemaVida.gd" id="14_486ce"]
 [ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="14_vd41i"]
+[ext_resource type="Resource" uid="uid://bsdy1o1bsqo4i" path="res://Cartas/Dia 1/jogador/carta3.tres" id="14_xldyr"]
+[ext_resource type="Resource" uid="uid://cc1uwlutv3pk8" path="res://Cartas/Dia 1/jogador/carta2.tres" id="15_kmsla"]
+[ext_resource type="Resource" uid="uid://dvqxwecpg82qn" path="res://Cartas/Dia 1/jogador/carta1.tres" id="16_3mu0q"]
 [ext_resource type="PackedScene" uid="uid://ckx17c32k3rtf" path="res://Scenes/round_toggler.tscn" id="16_nne6o"]
+[ext_resource type="Resource" uid="uid://decix3n51a8c3" path="res://Cartas/Dia 1/inimigo/carta8.tres" id="18_2knb8"]
 [ext_resource type="PackedScene" uid="uid://wq4y5asasmuc" path="res://Scenes/coin.tscn" id="18_7vlph"]
-[ext_resource type="PackedScene" uid="uid://db3ee3ne82pyx" path="res://Scenes/display_carimbo.tscn" id="20_387br"]
+[ext_resource type="Texture2D" uid="uid://c4wbh2j2x6hfm" path="res://Sprites/cartaPlayerNormal.png" id="18_xldyr"]
+[ext_resource type="Resource" uid="uid://xpri03c4k6x5" path="res://Cartas/Dia 1/inimigo/carta7.tres" id="19_heee7"]
+[ext_resource type="Texture2D" uid="uid://t78wb2g4xmt6" path="res://Sprites/cartaPlayerSelecionada.png" id="19_kmsla"]
+[ext_resource type="PackedScene" uid="uid://db3ee3ne82pyx" path="res://Scenes/display_selo.tscn" id="20_387br"]
+[ext_resource type="Texture2D" uid="uid://c3e3jguotltv7" path="res://Sprites/deck player.png" id="20_heee7"]
+[ext_resource type="Resource" uid="uid://dpxni0q5ow6ay" path="res://Cartas/Dia 1/inimigo/carta6.tres" id="20_pgdia"]
+[ext_resource type="Texture2D" uid="uid://dy5qoe2s2floe" path="res://Sprites/molduraPlayer.png" id="21_3mu0q"]
+[ext_resource type="Resource" uid="uid://bu02eerhu6upk" path="res://Cartas/Dia 1/inimigo/carta5.tres" id="21_5v2fc"]
 [ext_resource type="PackedScene" uid="uid://btc3lys11iha1" path="res://Scenes/lose_display.tscn" id="21_emx8f"]
+[ext_resource type="Resource" uid="uid://dg87vl3s0tmbq" path="res://Cartas/Dia 1/inimigo/carta4.tres" id="22_h48w6"]
+[ext_resource type="PackedScene" uid="uid://eqm3ghurk6fl" path="res://Scenes/stamp_button.tscn" id="22_kcxpu"]
+[ext_resource type="Texture2D" uid="uid://dx2pf3q1oanrb" path="res://Sprites/calendarioPH.png" id="23_hgaye"]
+[ext_resource type="Resource" uid="uid://luy1bxpak2s2" path="res://Cartas/Dia 1/inimigo/carta3.tres" id="23_ptgq6"]
+[ext_resource type="PackedScene" uid="uid://dkgs01nymc6l8" path="res://Scenes/win_display.tscn" id="24_cwdtu"]
+[ext_resource type="Resource" uid="uid://s660pal7f2du" path="res://Cartas/Dia 1/inimigo/carta2.tres" id="24_rvo04"]
+[ext_resource type="Resource" uid="uid://ds5ipksl6y7bn" path="res://Cartas/Dia 1/inimigo/carta1.tres" id="25_h2o6l"]
+[ext_resource type="Texture2D" uid="uid://b28angmfrlemo" path="res://Sprites/cartaInimigoNormal.png" id="29_3mu0q"]
+[ext_resource type="Texture2D" uid="uid://m2jnb4qeppts" path="res://Sprites/cartaInimigoSelecionada.png" id="30_2knb8"]
+[ext_resource type="Texture2D" uid="uid://bduhscmebi4yb" path="res://Sprites/molduraInimigo.png" id="32_2knb8"]
+[ext_resource type="Texture2D" uid="uid://em0b81xcuao2" path="res://Sprites/deck inimigo.png" id="33_pgdia"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ww2ai"]
 font = ExtResource("14_vd41i")
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Battle" type="Node2D" unique_id=1884030731 node_paths=PackedStringArray("coins_display", "jogador", "inimigo", "painel", "stop_mouse", "round_text", "toggler", "deselect", "display_carimbo", "lose_display")]
+[sub_resource type="LabelSettings" id="LabelSettings_cwdtu"]
+font = ExtResource("14_vd41i")
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Battle" type="Node2D" unique_id=1884030731 node_paths=PackedStringArray("coins_display", "jogador", "inimigo", "painel", "round_text", "toggler", "deselect", "display_selos", "lose_display", "stamp_button", "dia_label", "win_dispay", "menu_button", "endround_button")]
 script = ExtResource("1_1ruyk")
 coins_display = NodePath("UI/MoneyDisplay")
 jogador = NodePath("Players/Jogador")
 inimigo = NodePath("Players/Inimigo")
 painel = NodePath("UI/PaninelAtributos")
-stop_mouse = NodePath("UI/StopMouse")
 round_text = NodePath("UI/Round")
 toggler = NodePath("UI/RoundToggler")
 deselect = NodePath("Deselect")
-display_carimbo = NodePath("UI/DisplayCarimbo")
+display_selos = NodePath("UI/Displayselo")
 lose_display = NodePath("UI/Lose_Display")
+stamp_button = NodePath("UI/StampButton")
+dia_label = NodePath("UI/Calendario_Sprite/Dia_Label")
+win_dispay = NodePath("UI/WinDisplay")
+menu_button = NodePath("UI/MenuButton")
+atributos = ExtResource("2_5gfn5")
+endround_button = NodePath("UI/EndRound")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=152865990]
-visible = false
 z_index = -1
 texture = ExtResource("1_w7k78")
 centered = false
@@ -65,7 +99,7 @@ hand = NodePath("../../Jogador/Hand")
 deck = NodePath("../../Jogador/Deck")
 sistemaDinheiro = NodePath("../../Sistemas/SistemaDinheiro_Player")
 sistemaVida = NodePath("../../Sistemas/SistemaVida_Player")
-moneyLabel = NodePath("../../UI/Money")
+moneyLabel = NodePath("../../UI/Coin/Money")
 enemie = NodePath("../Inimigo")
 portrait = NodePath("../../Jogador/Portrait")
 metadata/_custom_type_script = "uid://vhj4tjpsqoia"
@@ -84,7 +118,7 @@ metadata/_custom_type_script = "uid://vhj4tjpsqoia"
 [node name="Jogador" type="Node" parent="." unique_id=772403808]
 
 [node name="Line" parent="Jogador" unique_id=806667132 instance=ExtResource("5_f6xt6")]
-position = Vector2(320, 211)
+position = Vector2(320, 223.5)
 
 [node name="Hand" parent="Jogador" unique_id=1472384206 instance=ExtResource("4_1otgo")]
 position = Vector2(320, 310)
@@ -92,29 +126,38 @@ position = Vector2(320, 310)
 [node name="Deck" parent="Jogador" unique_id=779635910 node_paths=PackedStringArray("hand") instance=ExtResource("5_pd5xk")]
 position = Vector2(495, 296)
 hand = NodePath("../Hand")
-Atributos = Array[ExtResource("7_heh15")]([ExtResource("8_xkp4y"), ExtResource("9_vd41i"), ExtResource("10_nne6o"), ExtResource("8_xkp4y"), ExtResource("9_vd41i"), ExtResource("10_nne6o")])
+Atributos = Array[ExtResource("7_heh15")]([ExtResource("9_s1dsa"), ExtResource("10_5gfn5"), ExtResource("11_hatvd"), ExtResource("12_dndgb"), ExtResource("13_sk0lo"), ExtResource("14_xldyr"), ExtResource("15_kmsla"), ExtResource("16_3mu0q")])
+texturas = Array[CompressedTexture2D]([ExtResource("18_xldyr"), ExtResource("19_kmsla"), ExtResource("20_heee7")])
 
 [node name="Portrait" parent="Jogador" unique_id=1480748846 instance=ExtResource("11_xkp4y")]
 position = Vector2(575, 302)
+moldura_textura = ExtResource("21_3mu0q")
 
 [node name="Inimigo" type="Node" parent="." unique_id=791877346]
 
 [node name="Hand" parent="Inimigo" unique_id=2590985 instance=ExtResource("4_1otgo")]
 position = Vector2(320, 50)
 rotation = 3.1415927
+is_player = false
 
 [node name="Line" parent="Inimigo" unique_id=1766148314 instance=ExtResource("5_f6xt6")]
-position = Vector2(318, 128)
+position = Vector2(318, 136.5)
 rotation = 3.1415927
+is_player = false
 
 [node name="Deck" parent="Inimigo" unique_id=1814135973 node_paths=PackedStringArray("hand") instance=ExtResource("5_pd5xk")]
 position = Vector2(142, 66)
 rotation = -3.1415925
 hand = NodePath("../Hand")
-Atributos = Array[ExtResource("7_heh15")]([ExtResource("8_xkp4y"), ExtResource("9_vd41i"), ExtResource("10_nne6o"), ExtResource("8_xkp4y"), ExtResource("9_vd41i"), ExtResource("10_nne6o")])
+Atributos = Array[ExtResource("7_heh15")]([ExtResource("18_2knb8"), ExtResource("19_heee7"), ExtResource("20_pgdia"), ExtResource("21_5v2fc"), ExtResource("22_h48w6"), ExtResource("23_ptgq6"), ExtResource("24_rvo04"), ExtResource("25_h2o6l")])
+texturas = Array[CompressedTexture2D]([ExtResource("29_3mu0q"), ExtResource("30_2knb8"), ExtResource("33_pgdia")])
 
 [node name="Portrait" parent="Inimigo" unique_id=130935030 instance=ExtResource("11_xkp4y")]
 position = Vector2(65, 56)
+moldura_textura = ExtResource("32_2knb8")
+
+[node name="Heart" parent="Inimigo/Portrait" index="2" unique_id=1117175715]
+position = Vector2(35, 35)
 
 [node name="Sistemas" type="Node" parent="." unique_id=1558391776]
 
@@ -139,21 +182,13 @@ metadata/_custom_type_script = "uid://dm83c2r27p37u"
 
 [node name="UI" type="Node" parent="." unique_id=932220261]
 
-[node name="DisplayCarimbo" parent="UI" unique_id=1591427210 instance=ExtResource("20_387br")]
+[node name="Displayselo" parent="UI" unique_id=1591427210 instance=ExtResource("20_387br")]
 visible = false
-position = Vector2(106.00001, 164.00002)
+position = Vector2(105.00001, 113.000015)
 scale = Vector2(1.3, 1.3)
 
 [node name="MoneyDisplay" parent="UI" unique_id=247625448 instance=ExtResource("8_lrv64")]
 position = Vector2(120, 330)
-
-[node name="Money" type="Label" parent="UI" unique_id=1027649016]
-offset_left = 569.0
-offset_top = 21.0
-offset_right = 609.0
-offset_bottom = 44.0
-text = "0"
-label_settings = SubResource("LabelSettings_ww2ai")
 
 [node name="Round" type="Label" parent="UI" unique_id=1024347929]
 offset_left = 21.0
@@ -175,7 +210,7 @@ text = "Encerrar Round"
 
 [node name="PaninelAtributos" parent="UI" unique_id=1542605855 instance=ExtResource("13_fonr4")]
 visible = false
-position = Vector2(543, 162)
+position = Vector2(543, 144)
 
 [node name="StopMouse" type="Panel" parent="UI" unique_id=430524217]
 visible = false
@@ -187,10 +222,48 @@ offset_bottom = 360.0
 position = Vector2(55, 211)
 
 [node name="Coin" parent="UI" unique_id=528850258 instance=ExtResource("18_7vlph")]
-position = Vector2(552, 29)
+position = Vector2(553, 29)
+
+[node name="Money" type="Label" parent="UI/Coin" unique_id=1027649016]
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 43.0
+offset_bottom = 10.0
+text = "0"
+label_settings = SubResource("LabelSettings_ww2ai")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Lose_Display" parent="UI" unique_id=932521676 instance=ExtResource("21_emx8f")]
 visible = false
 position = Vector2(320, 160)
 
-[connection signal="button_up" from="UI/EndRound" to="." method="_on_end_round_button_up"]
+[node name="StampButton" parent="UI" unique_id=317439757 instance=ExtResource("22_kcxpu")]
+position = Vector2(151, 191)
+scale = Vector2(0.525, 0.525)
+
+[node name="Calendario_Sprite" type="Sprite2D" parent="UI" unique_id=779353825]
+position = Vector2(474, 19)
+texture = ExtResource("23_hgaye")
+centered = false
+
+[node name="Dia_Label" type="Label" parent="UI/Calendario_Sprite" unique_id=1963125108]
+offset_left = 20.0
+offset_right = 69.0
+offset_bottom = 20.0
+text = "dia 3"
+label_settings = SubResource("LabelSettings_cwdtu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinDisplay" parent="UI" unique_id=51221615 instance=ExtResource("24_cwdtu")]
+position = Vector2(320, 180)
+
+[node name="MenuButton" type="TextureButton" parent="UI" unique_id=507351356]
+offset_left = 598.0
+offset_top = 19.0
+offset_right = 618.0
+offset_bottom = 39.0
+texture_normal = ExtResource("23_hgaye")
+
+[editable path="Inimigo/Portrait"]

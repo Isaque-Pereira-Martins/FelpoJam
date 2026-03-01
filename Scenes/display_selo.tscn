@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://db3ee3ne82pyx"]
+
+[ext_resource type="Script" uid="uid://b3ndw3u08o4vr" path="res://Scripts/display_carimbo.gd" id="1_6cmn2"]
+[ext_resource type="FontFile" uid="uid://wvykgccqxc6y" path="res://Fonts/upheavtt.ttf" id="1_cv7ej"]
+[ext_resource type="PackedScene" uid="uid://43v36aqwair4" path="res://Scenes/selo.tscn" id="2_6cmn2"]
+[ext_resource type="Texture2D" uid="uid://1x4a5ern2k8a" path="res://Sprites/seloEspada.png" id="4_b7687"]
+[ext_resource type="Script" uid="uid://dd7hl2tbb1yge" path="res://Resources/atributo1_selo.gd" id="4_u6gco"]
+[ext_resource type="Texture2D" uid="uid://hsvhv3vndlgh" path="res://Sprites/seloFeitico.png" id="5_mlamy"]
+[ext_resource type="Script" uid="uid://cph4enq4r3svl" path="res://Resources/atributo2_selo.gd" id="5_vwdcx"]
+[ext_resource type="Script" uid="uid://dib7m1e77ot3o" path="res://Resources/atributo3_selo.gd" id="6_ajx6k"]
+[ext_resource type="Texture2D" uid="uid://dt4t0ofahlv12" path="res://Sprites/seloMira.png" id="6_kbxn2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6gco"]
+font = ExtResource("1_cv7ej")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vwdcx"]
+font = ExtResource("1_cv7ej")
+
+[sub_resource type="LabelSettings" id="LabelSettings_iqlxn"]
+font = ExtResource("1_cv7ej")
+
+[node name="DisplaySelo" type="Node2D" unique_id=1591427210 node_paths=PackedStringArray("selo1", "selo2", "selo3", "label1", "label2", "label3")]
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_6cmn2")
+selo1 = NodePath("PanelContainer/VBoxContainer/Control/Selo")
+selo2 = NodePath("PanelContainer/VBoxContainer/Control2/Selo")
+selo3 = NodePath("PanelContainer/VBoxContainer/Control3/Selo")
+label1 = NodePath("PanelContainer/VBoxContainer/Selo1")
+label2 = NodePath("PanelContainer/VBoxContainer/Selo2")
+label3 = NodePath("PanelContainer/VBoxContainer/selo3")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=557228523]
+custom_minimum_size = Vector2(0, 140)
+offset_right = 64.0
+offset_bottom = 92.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1052991783]
+layout_mode = 2
+
+[node name="Selo1" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2035128700]
+layout_mode = 2
+text = "o"
+label_settings = SubResource("LabelSettings_u6gco")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer" unique_id=316338329]
+custom_minimum_size = Vector2(18, 23)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Selo" parent="PanelContainer/VBoxContainer/Control" unique_id=381225630 node_paths=PackedStringArray("atributo") instance=ExtResource("2_6cmn2")]
+position = Vector2(9, 12)
+atributo = NodePath("../../../../atributo1")
+texture = ExtResource("4_b7687")
+
+[node name="Selo2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=106904595]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_vwdcx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer" unique_id=1491508927]
+custom_minimum_size = Vector2(18, 23)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Selo" parent="PanelContainer/VBoxContainer/Control2" unique_id=1300155569 node_paths=PackedStringArray("atributo") instance=ExtResource("2_6cmn2")]
+position = Vector2(9, 12)
+atributo = NodePath("../../../../atributo2")
+texture = ExtResource("5_mlamy")
+
+[node name="selo3" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1820177751]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_iqlxn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer" unique_id=1538812168]
+custom_minimum_size = Vector2(18, 23)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Selo" parent="PanelContainer/VBoxContainer/Control3" unique_id=1300077360 node_paths=PackedStringArray("atributo") instance=ExtResource("2_6cmn2")]
+position = Vector2(9, 12)
+atributo = NodePath("../../../../atributo3")
+texture = ExtResource("6_kbxn2")
+
+[node name="atributo1" type="Node" parent="." unique_id=1160779623]
+script = ExtResource("4_u6gco")
+metadata/_custom_type_script = "uid://dd7hl2tbb1yge"
+
+[node name="atributo2" type="Node" parent="." unique_id=1400436501]
+script = ExtResource("5_vwdcx")
+metadata/_custom_type_script = "uid://cph4enq4r3svl"
+
+[node name="atributo3" type="Node" parent="." unique_id=153341451]
+script = ExtResource("6_ajx6k")
+metadata/_custom_type_script = "uid://dib7m1e77ot3o"

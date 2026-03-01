@@ -1,24 +1,26 @@
-class_name Carimbo extends Node2D
+class_name Selo extends Node2D
 
 @export var button : Button
 @export var sprite : Sprite2D
 @export var atributo : Node = null
+@export var texture : CompressedTexture2D
 var display : DisplayCarimbo
 var is_selected : bool = false
 var walking : bool = false
 
 func _ready() -> void:
 	button.button_up.connect(button_clicked)
+	sprite.texture = texture
 	
 func button_clicked() -> void:
-	if display.request_carimbo(self):
-		var card = Globals.Selected_Card
+	if display.request_selo(self):
+		Globals.Selected_Card.set_selo(self)
 		var tween = create_tween()
 		tween.tween_property(self, "scale", Vector2(1.5,1.5),0.2).set_trans(Tween.TRANS_QUAD)
 		await tween.finished
 		display.popOut()
 		scale = Vector2(1,1)
-		card.set_carimbo(self)
+
 	else:
 		if walking: return
 		walking = true
